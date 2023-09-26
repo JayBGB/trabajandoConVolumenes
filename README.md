@@ -50,3 +50,35 @@ docker run --name dam_web1 -d -p 80:80 -v "$PWD"/htdocs:/usr/local/apache2/htdoc
 ```
 
 </details>
+
+
+## 5. Realizar un 'Hello World' en HTML y acceder desde el navegador.
+<details>
+<summary>Explicación del quinto paso.</summary>
+
+Creamos un archivo HTML llamado **index.html** en el directorio **htdocs** que hemos montado en el paso 4. Luego, accedemos a la página desde tu navegador utilizando la siguiente URL:
+
+[http://localhost:80](http://localhost:80)
+
+```html
+<html>
+    <body>
+        <h1>
+            Hello World!
+        </h1>
+    </body>
+</html>
+```
+</details>
+
+## 6. Crear otro contenedor 'dam_web2' con el mismo volumen y a otro puerto.
+
+<details>
+<summary>Explicación del sexto paso.</summary>
+
+Utilizamos el siguiente comando para llevar a cabo este paso: `docker run --name dam_web2 -d -p 9080:80 -v "$PWD"/htdocs:/usr/local/apache2/htdocs/ httpd:2.4`
+
+```bash
+
+docker run --name dam_web2 -d -p 9080:80 -v "$PWD"/htdocs:/usr/local/apache2/htdocs/ httpd:2.4
+```
