@@ -82,3 +82,31 @@ Utilizamos el siguiente comando para llevar a cabo este paso: `docker run --name
 
 docker run --name dam_web2 -d -p 9080:80 -v "$PWD"/htdocs:/usr/local/apache2/htdocs/ httpd:2.4
 ```
+## 7. Comprobar que los dos servidores 'sirven' la misma página.
+
+<details>
+<summary>Explicación del séptimo paso.</summary>
+Para esto simplemente debemos abrir el navegador y acceder a las siguientes URLs:
+
+[http://localhost:80](http://localhost:80)
+[http://localhost:9080](http://localhost:9080)
+</details>
+
+## 8. Realizar modificaciones en la página y comprobar que los dos servidores 'sirven' la misma página.
+
+<details>
+<summary>Explicación del séptimo paso.</summary>
+
+Abrimos el archivo **index.html** en el directorio **htdocs** y realizamos modificaciones en el contenido. 
+Al actualizar cualquiera de las dos URLs anteriores en el navegador, vemos las modificaciones reflejadas en ambas páginas. Esto demuestra que ambos servidores están sirviendo la misma página y se mantienen sincronizados gracias al `bind mount`.
+
+```html
+<html>
+    <body>
+        <h1>
+            Hello World! How are you getting on?
+        </h1>
+    </body>
+</html>
+```
+</details>
