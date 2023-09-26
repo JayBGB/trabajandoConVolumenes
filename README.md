@@ -82,6 +82,8 @@ Utilizamos el siguiente comando para llevar a cabo este paso: `docker run --name
 
 docker run --name dam_web2 -d -p 9080:80 -v "$PWD"/htdocs:/usr/local/apache2/htdocs/ httpd:2.4
 ```
+</details>
+
 ## 7. Comprobar que los dos servidores 'sirven' la misma página.
 
 <details>
